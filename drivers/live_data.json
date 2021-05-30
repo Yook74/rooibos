@@ -1,0 +1,1941 @@
+{
+    "config": {
+        "original_name": "KConfig_LD",
+        "type": "bitfield",
+        "addresses": [
+            {
+                "offset": 0,
+                "num_bytes": 1
+            }
+        ],
+        "bits": [
+            "Spark advance at idle",
+            "Closed loop idle",
+            "Fuel cut enabled",
+            "Learned Open Loop enabled",
+            "Bank Angle Sensor enabled",
+            "Initial FP duty cycle",
+            "Enable real-time table value adjustment",
+            "Table value locking in adjustment"
+        ]
+    },
+    "system_time_10ms": {
+        "original_name": "MS_10",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 1,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "10 Millisecond Time",
+        "scale_factor": 0.01,
+        "units": "Milliseconds",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.2f"
+    },
+    "system_time_seconds": {
+        "original_name": "Seconds",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 2,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Seconds since key-on",
+        "scale_factor": 1.0,
+        "units": "Seconds",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "engine_rpm": {
+        "original_name": "RPM",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 4,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Engine Speed",
+        "scale_factor": 1.0,
+        "units": "RPM",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "spark_advance_front": {
+        "original_name": "Adv1",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 6,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Spark Advance, Front",
+        "scale_factor": 0.0025,
+        "units": "Degrees",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.3f"
+    },
+    "spark_advance_rear": {
+        "original_name": "Adv2",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 8,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Spark Advance, Rear",
+        "scale_factor": 0.0025,
+        "units": "Degrees",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.3f"
+    },
+    "fuel_table_lookup_front": {
+        "original_name": "TabFuel1",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 10,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "The length of the fuel pulse on the front cylinder as dictated by the fuel table before correction",
+        "scale_factor": 0.00133,
+        "units": "Milliseconds",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.3f"
+    },
+    "fuel_table_lookup_rear": {
+        "original_name": "TabFuel2",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 12,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "The length of the fuel pulse on the rear cylinder as dictated by the fuel table before correction",
+        "scale_factor": 0.00133,
+        "units": "Milliseconds",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.3f"
+    },
+    "fuel_pulse_front": {
+        "original_name": "Fuel1",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 14,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "The length of the fuel pulse on the front cylinder",
+        "scale_factor": 0.00133,
+        "units": "Milliseconds",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.3f"
+    },
+    "fuel_pulse_rear": {
+        "original_name": "Fuel2",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 16,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "The length of the fuel pulse on the rear cylinder",
+        "scale_factor": 0.00133,
+        "units": "Milliseconds",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.3f"
+    },
+    "battery_voltage": {
+        "original_name": "Bat",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 21,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Battery Voltage",
+        "scale_factor": 0.01,
+        "units": "Volts",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.2f"
+    },
+    "engine_temperature": {
+        "original_name": "TE",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 23,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Engine Temperature",
+        "scale_factor": 0.1,
+        "units": "Degrees C",
+        "offset": "-4.0000000000000000e+01",
+        "format_string": "0.1f"
+    },
+    "air_temperature": {
+        "original_name": "TA",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 25,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Ambient air temperature",
+        "scale_factor": 0.1,
+        "units": "Degrees C",
+        "offset": "-4.0000000000000000e+01",
+        "format_string": "0.0f"
+    },
+    "fuel_correction_battery": {
+        "original_name": "CrBat",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 29,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Corrects the fuel pulse length based on the voltage of the battery",
+        "scale_factor": 0.00133,
+        "units": "Milliseconds",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.3f"
+    },
+    "fuel_correction_engine_temperature": {
+        "original_name": "CrTE",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 31,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Corrects the fuel pulse length based on the engine temperature",
+        "scale_factor": 0.1,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "fuel_correction_ambient_temperature": {
+        "original_name": "CrTA",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 33,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Corrects the fuel pulse length based on the ambient air temperature",
+        "scale_factor": 0.1,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "fuel_correction_engine_acceleration": {
+        "original_name": "CrAcc",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 35,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Corrects the fuel pulse length based on the acceleration of the engine RPM",
+        "scale_factor": 0.1,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "fuel_correction_engine_deceleration": {
+        "original_name": "CrDec",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 37,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Corrects the fuel pulse length based on the deceleration of the engine RPM",
+        "scale_factor": 0.1,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "fuel_correction_wide_open_throttle": {
+        "original_name": "CrWOT",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 39,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Corrects the fuel pulse length when the throttle is fully open",
+        "scale_factor": 0.1,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "fuel_correction_idle": {
+        "original_name": "CrIdle",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 41,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Corrects the fuel pulse length when the engine is at idle",
+        "scale_factor": 0.1,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "CrOL": {
+        "original_name": "CrOL",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 43,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Open Loop Correction",
+        "scale_factor": 0.1,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "fuel_correction_learned_rear": {
+        "original_name": "LFuel_LD",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 45,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Corrects the fuel pulse length based on learning from the Oxygen sensor. Applies to the rear cylinder or both cylinders on bikes with only one oxygen sensor.",
+        "scale_factor": 0.1,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.1f"
+    },
+    "estimated_mixture_rear": {
+        "original_name": "FBFuel",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 47,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "The ECM's best guess at the current fuel/air mixture (percent lean or rich). Applies to the rear cylinder or both cylinders on bikes with only one oxygen sensor. ",
+        "scale_factor": 0.1,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.1f"
+    },
+    "flags": {
+        "original_name": "Flags0",
+        "type": "bitfield",
+        "addresses": [
+            {
+                "offset": 49,
+                "num_bytes": 7
+            }
+        ],
+        "bits": [
+            "AD_Req",
+            "Calc_RPM_Req",
+            "Spark_Ctl",
+            "TPS_Read_Req",
+            "Timed_Dwell",
+            "EEP_Fail",
+            "Sync",
+            "Checksum_Fail",
+            "Engine_Run",
+            "O2_Active",
+            "Accel",
+            "Decel",
+            "Run_Stop",
+            "WOT",
+            "Idle",
+            "Ignition_On",
+            "Rear_Cyl_Recalc",
+            "Accel_Transition",
+            "BAS_Read",
+            "O2_Transition",
+            "Closed_Loop_Learn",
+            "Flags35",
+            "Rich",
+            "Closed_Loop",
+            "FEM_Req",
+            "Timer_OV_Req",
+            "First_RPM",
+            "Cam_Active",
+            "Kill",
+            "Security Kill (tracks Sec_Imm)",
+            "Fire_Long_Front",
+            "Fire_Long_Rear",
+            "Cursor_Used",
+            "Temp_Cursor_Used",
+            "Sec_EEP_Fail",
+            "Data_Dump",
+            "Kill_Fuel",
+            "Continuous_Fuel",
+            "Fuel_Front_Done",
+            "Fuel_Rear_Done",
+            "Fuel_Long_Front",
+            "Fuel_Long_Rear",
+            "Fuel_Med_Front",
+            "Fuel_Med_Rear",
+            "First_Fuel_Rear",
+            "First_Fuel_Front",
+            "Fuel_Before_Sync_1",
+            "Fuel_Before_Sync_2",
+            "EEP_NORAM_Update",
+            "Timer_5ms",
+            "New_TPS",
+            "Hot",
+            "TXD_IP",
+            "Command_Received",
+            "Tick_65_MS",
+            "EEP_Update_Req"
+        ]
+    },
+    "FP_PWM_Duty": {
+        "original_name": "FP_PWM_Duty",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 117,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Fuel Pressure PWM duty cycle (KFPC_Config enabled)",
+        "scale_factor": 1.0,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "vehicle_speed_kph": {
+        "original_name": "VS_KPH",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 92,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Vehicle speed in KPH (enable in KVS_Config)",
+        "scale_factor": 1.0,
+        "units": "KPH",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "gear": {
+        "original_name": "Gear",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 93,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Transmission gear (enable in KVS_Config)",
+        "scale_factor": 1.0,
+        "units": "",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "manifold_air_pressure_front": {
+        "original_name": "MAP_Front",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 114,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Air Pressure in the front intake manifold",
+        "scale_factor": 1.0,
+        "units": "",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "manifold_air_pressure_rear": {
+        "original_name": "MAP_Rear",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 115,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Air Pressure in the rear intake manifold",
+        "scale_factor": 1.0,
+        "units": "",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "barometric_pressure": {
+        "original_name": "ABP",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 116,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Barometric pressure in the airbox",
+        "scale_factor": 1.0,
+        "units": "KPA (typical)",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "fuel_correction_learned_front": {
+        "original_name": "LFuel1_LD",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 121,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Corrects the fuel pulse length in the front cylinder based on learning from the oxygen sensor.",
+        "scale_factor": 0.1,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.1f"
+    },
+    "estimated_mixture_front": {
+        "original_name": "FBFuel1",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 123,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "The ECM's best guess at the current fuel/air mixture (percent lean or rich) in the front cylinder.",
+        "scale_factor": 0.1,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.1f"
+    },
+    "historic_trouble_codes": {
+        "original_name": "HDiag10_LD",
+        "type": "bitfield",
+        "addresses": [
+            {
+                "offset": 125,
+                "num_bytes": 1
+            },{
+                "offset": 96,
+                "num_bytes": 2
+            },{
+                "offset": 68,
+                "num_bytes": 7
+            }
+        ],
+        "bits": [
+            "",
+            "Cluster Mode Button Stuck",
+            "Cluster Toggle Button Stuck",
+            "Cluster Low Fuel High",
+            "Cluster Low Fuel Low",
+            "Cluster Communication Error",
+            "Cluster Low Oil Pressure fault",
+            "Cluster Security System fault",
+            "Cooling Fan 2 short Low / open",
+            "Cooling Fan 2 short High",
+            "Crank sensor short Low",
+            "Crank sensor short High",
+            "MAP short Low",
+            "MAP short High / open",
+            "Baro short Low",
+            "Baro short High / open",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ET Too Low",
+            "ET Too High",
+            "O2 always rich",
+            "O2 always lean",
+            "O2 inactive",
+            "TPS Low",
+            "TPS High",
+            "Cooling fan low",
+            "Coil1 short low / open",
+            "Coil1 short high",
+            "Inj1 short low/open",
+            "Inj1 short high",
+            "Bat too low",
+            "Bat too high",
+            "AT too low",
+            "AT too high",
+            "Tach short low",
+            "Tach short high",
+            "Fuel Pump low",
+            "Fuel Pump high",
+            "Inj2 short low/open",
+            "Inj2 short high",
+            "Coil2 short low/open",
+            "Coil2 short high",
+            "Sync failure",
+            "ADC error",
+            "EEPROM / Flash data error",
+            "Program memory checksum error",
+            "RAM failure (write/read verify)",
+            "CF short high",
+            "BAS too low",
+            "BAS too high",
+            "AMC stuck open",
+            "AMC stuck closed",
+            "AMC short low",
+            "AMC short high",
+            "AIC failure",
+            "Sidestand Input Low",
+            "Sidestand Input High",
+            "Sidestand failure",
+            "Starter Relay short high",
+            "Auxiliary Power Relay failure",
+            "Neutral short low / open",
+            "Neutral short high",
+            "Clutch short low / open",
+            "Clutch short high",
+            "Active Intake Control short low / open",
+            "Active Intake Control short high",
+            "CAN failure",
+            "Security System Fault",
+            "Vehicle Speed Input short low",
+            "Vehicle Speed Input short high / open",
+            "Vehicle Speed Output short / open",
+            "Idle Air Control Position too low",
+            "Idle Air Control Position too high",
+            "Idle Air Control circuit failure",
+            "",
+            "Fuel Pressure Control can't maintain pressure",
+            "Fuel Pressure Sensor Low",
+            "Fuel Pressure Sensor High / open",
+            "Learned Fuel Cylinder Difference too high",
+            "Front O2 Rich",
+            "Front O2 Lean",
+            "Front O2 Inactive"
+        ]
+    },
+    "manifold_air_pressure_front_10": {
+        "original_name": "MAP_Front10",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 39,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "MAP, front cylinder (enable in KABP_Config)",
+        "scale_factor": 1.0,
+        "units": "10-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "manifold_air_pressure_rear_10": {
+        "original_name": "MAP_Rear10",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 41,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "MAP, rear cylinder  (enable in KABP_Config)",
+        "scale_factor": 1.0,
+        "units": "10-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "intake_air_control_average": {
+        "original_name": "IAC_Avg_LD",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 53,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "IAC_Avg, live (when KIAC_Enable set)",
+        "scale_factor": 1.0,
+        "units": "Steps",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "barometric_pressure_average": {
+        "original_name": "Avg_Baro",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 53,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Average baro (enable in KABP_Config, KFPC_Config)",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "CR_ABP": {
+        "original_name": "CR_ABP",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 54,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Airbox, VS CR (enable in KABP_Config, KFPC_Config)",
+        "scale_factor": 1.0,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "fuel_correction_barometric_pressure": {
+        "original_name": "CR_Baro",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 55,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Baro CR (enable in KABP_Config, KFPC_Config)",
+        "scale_factor": 1.0,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "oxygen_sensor_reading_front": {
+        "original_name": "FrontAFR",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 102,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Front Air/Fuel Ratio (0-5V=10-20AFR). Only works when wide-band oxygen sensors are connected.",
+        "scale_factor": 0.03922,
+        "units": "A/F Ratios",
+        "offset": "1.0000000000000000e+01",
+        "format_string": "0.2f"
+    },
+    "oxygen_sensor_reading_rear": {
+        "original_name": "RearAFR",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 99,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Rear Air/Fuel Ratio (0-5V=10-20AFR). Only works when wide-band oxygen sensors are connected.",
+        "scale_factor": 0.03922,
+        "units": "A/F Ratios",
+        "offset": "1.0000000000000000e+01",
+        "format_string": "0.2f"
+    },
+    "vehicle_speed_mph": {
+        "original_name": "VS_MPH",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 92,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Vehicle Speed in MPH",
+        "scale_factor": 0.62137,
+        "units": "MPH",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "TA_F": {
+        "original_name": "TA_F",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 25,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Air Temp in Degrees F",
+        "scale_factor": 0.18,
+        "units": "Degrees F",
+        "offset": "-4.0000000000000000e+01",
+        "format_string": "0.1f"
+    },
+    "FLoad": {
+        "original_name": "FLoad",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 0,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Front load (enable KTMLoad_Config:7)",
+        "scale_factor": 1.0,
+        "units": "Percent * 2.56",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "RLoad": {
+        "original_name": "RLoad",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 20,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Rear cylinder load",
+        "scale_factor": 1.0,
+        "units": "Percent * 2.56",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "Current_TPP": {
+        "original_name": "Current_TPP",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 52,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Throttle pos. (enable KTMLoad_Config:0)",
+        "scale_factor": 1.0,
+        "units": "Percent * 2.56",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "MAPF_Load": {
+        "original_name": "MAPF_Load",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 54,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "MAP Front scaled (enable  KTMLoad_Config:0)",
+        "scale_factor": 1.0,
+        "units": "Percent * 2.56",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "MAPR_Load": {
+        "original_name": "MAPR_Load",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 55,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "MAP Rear scaled (enable KTMLoad_Config:0)",
+        "scale_factor": 1.0,
+        "units": "Percent * 2.56",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "Bat_100mV": {
+        "original_name": "Bat_100mV",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 21,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Battery Voltage, 100 mV units",
+        "scale_factor": 0.1,
+        "units": "100 mVolts",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.1f"
+    },
+    "AMAPBaro": {
+        "original_name": "AMAPBaro",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 37,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "big",
+        "description": "Baro via MAP, 10-bit (KABP_Config:Baro_SData)",
+        "scale_factor": 1.0,
+        "units": "10-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "ABaro10": {
+        "original_name": "ABaro10",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 43,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Baro input, 10 bit (KABP_Config:Baro_SData)",
+        "scale_factor": 1.0,
+        "units": "10-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "throttle_position": {
+        "original_name": "TPD",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 18,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Throttle Position, Degrees",
+        "scale_factor": 0.1,
+        "units": "Degrees",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.1f"
+    },
+    "AFP": {
+        "original_name": "AFP",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 89,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Fuel Pump Feedback",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "FP_Setpoint": {
+        "original_name": "FP_Setpoint",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 118,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Fuel Pressure Setpoint (FPC_Enable and FPC_Live=1)",
+        "scale_factor": 1.0,
+        "units": "PSI",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.1f"
+    },
+    "AMAP": {
+        "original_name": "AMAP",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 105,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Analog MAP",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "AInj1": {
+        "original_name": "AInj1",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 81,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Injector Feedback, Front",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "AInj2": {
+        "original_name": "AInj2",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 82,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Injector Feedback, Rear",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "ATPS": {
+        "original_name": "ATPS",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 83,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Unscaled Throttle Position",
+        "scale_factor": 1.0,
+        "units": "10-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "ABat": {
+        "original_name": "ABat",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 85,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Unscaled Battery Reading",
+        "scale_factor": 1.0,
+        "units": "10-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "ATE": {
+        "original_name": "ATE",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 87,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Unscaled Engine Temp",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "ATA": {
+        "original_name": "ATA",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 88,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Unscaled Air Temp",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "ACF": {
+        "original_name": "ACF",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 90,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Cooling Fan Feedback",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "Fan_Duty": {
+        "original_name": "Fan_Duty",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 91,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Cooling Fan Duty Cycle",
+        "scale_factor": 1.0,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "VSS_Count": {
+        "original_name": "VSS_Count",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 92,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Vehicle Speed Count",
+        "scale_factor": 1.0,
+        "units": "Counts/KVS_Sample",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "VS_RPM_Ratio": {
+        "original_name": "VS_RPM_Ratio",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 93,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Gear Selection Data",
+        "scale_factor": 1.0,
+        "units": "Counts/KVS_RPM_Revs",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "current_trouble_codes": {
+        "original_name": "CDiag8",
+        "type": "bitfield",
+        "addresses": [
+            {
+                "offset": 94,
+                "num_bytes": 2
+            },  {
+                "offset": 60,
+                "num_bytes": 6
+            }
+        ],
+        "bits": [
+            "Cooling Fan 2 short Low / open",
+            "Cooling Fan 2 short High",
+            "Crank sensor short Low",
+            "Crank sensor short High",
+            "MAP short Low",
+            "MAP short High / open",
+            "Baro short Low",
+            "Baro short High / open",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ET Too Low",
+            "ET Too High",
+            "O2 always rich",
+            "O2 always lean",
+            "O2 inactive",
+            "TPS Low",
+            "TPS High",
+            "Cooling fan low",
+            "Coil1 short low / open",
+            "Coil1 short high",
+            "Inj1 short low/open",
+            "Inj1 short high",
+            "Bat too low",
+            "Bat too high",
+            "AT too low",
+            "AT too high",
+            "Tach short low",
+            "Tach short high",
+            "Fuel Pump low",
+            "Fuel Pump high",
+            "Inj2 short low/open",
+            "Inj2 short high",
+            "Coil2 short low/open",
+            "Coil2 short high",
+            "Sync failure",
+            "ADC error",
+            "EEPROM / Flash data error",
+            "Program memory checksum error",
+            "RAM failure (write/read verify)",
+            "CF short high",
+            "BAS too low",
+            "BAS too high",
+            "AMC stuck open",
+            "AMC stuck closed",
+            "AMC short low",
+            "AMC short high",
+            "AIC failure",
+            "Sidestand Input Low",
+            "Sidestand Input High",
+            "Sidestand failure",
+            "Starter Relay short high",
+            "Auxiliary Power Relay failure",
+            "Neutral short low / open",
+            "Neutral short high (future)",
+            "Clutch short low / open",
+            "Clutch short high (future)",
+            "Active Intake Control short low / open",
+            "Active Intake Control short high",
+            "CAN failure",
+            "Security System Fault",
+            "Vehicle Speed Input short low",
+            "Vehicle Speed Input short high / open",
+            "Vehicle Speed Output short / open",
+            "Idle Air Control Position too low",
+            "Idle Air Control Position too high",
+            "Idle Air Control circuit failure",
+            "",
+            "Fuel Pressure Control can't maintain pressure",
+            "Fuel Pressure Sensor Low",
+            "Fuel Pressure Sensor High / open",
+            "Learned Fuel Cylinder Difference too high",
+            "Front O2 Rich",
+            "Front O2 Lean",
+            "Front O2 Inactive"
+        ]
+    },
+    "TE_RAW": {
+        "original_name": "TE_RAW",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 23,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Engine Temp, C*10+40",
+        "scale_factor": 1.0,
+        "units": "(Raw/10)-40",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "TE_F": {
+        "original_name": "TE_F",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 23,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Engine Temp, F",
+        "scale_factor": 0.18,
+        "units": "Degrees F",
+        "offset": "-4.0000000000000000e+01",
+        "format_string": "0.1f"
+    },
+    "FuelS1": {
+        "original_name": "FuelS1",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 56,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Showerhead Front pulse width, corrected",
+        "scale_factor": 0.001,
+        "units": "Milliseconds",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.3f"
+    },
+    "FuelS2": {
+        "original_name": "FuelS2",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 58,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Showerhead Rear pulse width, corrected",
+        "scale_factor": 0.001,
+        "units": "Milliseconds",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.3f"
+    },
+    "ATE_V": {
+        "original_name": "ATE_V",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 87,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Engine Temperature input, volts",
+        "scale_factor": 0.01953125,
+        "units": "Volts",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.2f"
+    },
+    "ATA_V": {
+        "original_name": "ATA_V",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 88,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Air Temperature input, volts",
+        "scale_factor": 0.01953125,
+        "units": "Volts",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.2f"
+    },
+    "IAC_Pos": {
+        "original_name": "IAC_Pos",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 113,
+                "num_bytes": 1
+            }
+        ],
+        "signed": true,
+        "endianness": "little",
+        "description": "Idle Air Control Stepper Position",
+        "scale_factor": 1.0,
+        "units": "Steps",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "IAC_Setpoint": {
+        "original_name": "IAC_Setpoint",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 112,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Idle Air Control RPM setpoint",
+        "scale_factor": 10.0,
+        "units": "RPM",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "AOT": {
+        "original_name": "AOT",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 98,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Analog Oil Temp",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "ACO2": {
+        "original_name": "ACO2",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 99,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Analog Catalyst O2",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "ATE1": {
+        "original_name": "ATE1",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 100,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Analog Engine Temp 1",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "AKnock1": {
+        "original_name": "AKnock1",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 101,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Analog Knock 1",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "AKnock2": {
+        "original_name": "AKnock2",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 102,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Analog Knock 2",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "AO21": {
+        "original_name": "AO21",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 103,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Analog O2 (front)",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "ABaro": {
+        "original_name": "ABaro",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 104,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Analog Baro, 8-bit (see ABaro10 for logging)",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "ASpare": {
+        "original_name": "ASpare",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 106,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Analog Spare",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "ASWIG": {
+        "original_name": "ASWIG",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 107,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Analog Switched Ignition",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "DOut2": {
+        "original_name": "DOut2",
+        "type": "bitfield",
+        "addresses": [
+            {
+                "offset": 108,
+                "num_bytes": 1
+            }
+        ],
+        "bits": [
+            "Vehicle Speed Output",
+            "Spare Output",
+            "Purge Output",
+            "Shift / Starter Enable Output",
+            "Cooling Fan 2 Output",
+            "J1850 Transmit",
+            "Active Intake Output",
+            "Active Muffler Output"
+        ]
+    },
+    "DFB2": {
+        "original_name": "DFB2",
+        "type": "bitfield",
+        "addresses": [
+            {
+                "offset": 109,
+                "num_bytes": 1
+            }
+        ],
+        "bits": [
+            "Vehicle Speed Output Feedback",
+            "Spare Output Feedback",
+            "Purge Output Feedback",
+            "Shift / Starter Enable Output Feedback",
+            "Cooling Fan 2 Output Feedback",
+            "J1850 Receive",
+            "Active Intake Output Feedback",
+            ""
+        ]
+    },
+    "CADiag": {
+        "original_name": "CADiag",
+        "type": "bitfield",
+        "addresses": [
+            {
+                "offset": 110,
+                "num_bytes": 1
+            }
+        ],
+        "bits": [
+            "Vehicle Speed Output CDiag",
+            "Spare Output CDiag",
+            "Purge Output CDiag",
+            "Shift / Starter Enable Output CDiag",
+            "",
+            "J1850 CDiag",
+            "Active Intake Output CDiag",
+            ""
+        ]
+    },
+    "RADiag": {
+        "original_name": "RADiag",
+        "type": "bitfield",
+        "addresses": [
+            {
+                "offset": 111,
+                "num_bytes": 1
+            }
+        ],
+        "bits": [
+            "Vehicle Speed Output RDiag",
+            "Spare Output RDiag",
+            "Purge Output RDiag",
+            "Shift / Starter Enable Output RDiag",
+            "",
+            "J1850 RDiag",
+            "Active Intake Output RDiag",
+            ""
+        ]
+    },
+    "ASI": {
+        "original_name": "ASI",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 98,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Analog Sidestand input (shares Oil Temp input)",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "Fuel_Pressure": {
+        "original_name": "Fuel_Pressure",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 119,
+                "num_bytes": 1
+            }
+        ],
+        "signed": true,
+        "endianness": "little",
+        "description": "Fuel Pressure (FPC_Enable and FPC_Live=1)",
+        "scale_factor": 0.5,
+        "units": "PSI",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.1f"
+    },
+    "CrFP": {
+        "original_name": "CrFP",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 120,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Fuel Pressure Correction Factor (KFPC_Config enab)",
+        "scale_factor": 1.0,
+        "units": "Percent",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "AO2": {
+        "original_name": "AO2",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 27,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Oxygen Sensor",
+        "scale_factor": 1.0,
+        "units": "10b ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "TP_IAC_Load": {
+        "original_name": "TP_IAC_Load",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 53,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Throttle and IAC load scaled (KTMLoad_Config:0)",
+        "scale_factor": 1.0,
+        "units": "Percent*2.56",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "AF1": {
+        "original_name": "AF1",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 56,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Air Fuel Sensor, Front",
+        "scale_factor": 1.0,
+        "units": "10-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "AF2": {
+        "original_name": "AF2",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 58,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Air Fuel Sensor, Rear",
+        "scale_factor": 1.0,
+        "units": "10-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "BAS": {
+        "original_name": "BAS",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 58,
+                "num_bytes": 2
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Bank Angle Sensor",
+        "scale_factor": 0.25,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "RC": {
+        "original_name": "RC",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 76,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Rides since code logged",
+        "scale_factor": 1.0,
+        "units": "Rides",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "DOut": {
+        "original_name": "DOut",
+        "type": "bitfield",
+        "addresses": [
+            {
+                "offset": 77,
+                "num_bytes": 1
+            }
+        ],
+        "bits": [
+            "Coil 1 Output",
+            "Coil 2 Output",
+            "Injector 1 Output",
+            "Injector 2 Output",
+            "Fuel Pump Output",
+            "Tach Output",
+            "Check Engine Lamp Output",
+            "Cooling Fan 1 Output"
+        ]
+    },
+    "DIn": {
+        "original_name": "DIn",
+        "type": "bitfield",
+        "addresses": [
+            {
+                "offset": 78,
+                "num_bytes": 1
+            }
+        ],
+        "bits": [
+            "Cam input state",
+            "Tach feedback",
+            "Vehicle Speed",
+            "Front Wheel Speed",
+            "Clutch Input",
+            "Neutral Input",
+            "Spare input",
+            "Crank Input"
+        ]
+    },
+    "ACoil1": {
+        "original_name": "ACoil1",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 79,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Coil Feedback, Front",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    },
+    "ACoil2": {
+        "original_name": "ACoil2",
+        "type": "scalar",
+        "addresses": [
+            {
+                "offset": 80,
+                "num_bytes": 1
+            }
+        ],
+        "signed": false,
+        "endianness": "little",
+        "description": "Coil Feedback, Rear",
+        "scale_factor": 1.0,
+        "units": "8-bit ADC",
+        "offset": "0.0000000000000000e+00",
+        "format_string": "0.0f"
+    }
+}
