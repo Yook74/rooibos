@@ -33,7 +33,7 @@
         "description": "10 Millisecond Time",
         "scale_factor": 0.01,
         "units": "Milliseconds",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.2f"
     },
     "system_time_seconds": {
@@ -50,7 +50,7 @@
         "description": "Seconds since key-on",
         "scale_factor": 1.0,
         "units": "Seconds",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "engine_rpm": {
@@ -67,7 +67,7 @@
         "description": "Engine Speed",
         "scale_factor": 1.0,
         "units": "RPM",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "spark_advance_front": {
@@ -84,7 +84,7 @@
         "description": "Spark Advance, Front",
         "scale_factor": 0.0025,
         "units": "Degrees",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.3f"
     },
     "spark_advance_rear": {
@@ -101,7 +101,7 @@
         "description": "Spark Advance, Rear",
         "scale_factor": 0.0025,
         "units": "Degrees",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.3f"
     },
     "fuel_table_lookup_front": {
@@ -118,7 +118,7 @@
         "description": "The length of the fuel pulse on the front cylinder as dictated by the fuel table before correction",
         "scale_factor": 0.00133,
         "units": "Milliseconds",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.3f"
     },
     "fuel_table_lookup_rear": {
@@ -135,7 +135,7 @@
         "description": "The length of the fuel pulse on the rear cylinder as dictated by the fuel table before correction",
         "scale_factor": 0.00133,
         "units": "Milliseconds",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.3f"
     },
     "fuel_pulse_front": {
@@ -152,7 +152,7 @@
         "description": "The length of the fuel pulse on the front cylinder",
         "scale_factor": 0.00133,
         "units": "Milliseconds",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.3f"
     },
     "fuel_pulse_rear": {
@@ -169,7 +169,7 @@
         "description": "The length of the fuel pulse on the rear cylinder",
         "scale_factor": 0.00133,
         "units": "Milliseconds",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.3f"
     },
     "battery_voltage": {
@@ -186,7 +186,7 @@
         "description": "Battery Voltage",
         "scale_factor": 0.01,
         "units": "Volts",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.2f"
     },
     "engine_temperature": {
@@ -203,7 +203,7 @@
         "description": "Engine Temperature",
         "scale_factor": 0.1,
         "units": "Degrees C",
-        "offset": "-4.0000000000000000e+01",
+        "offset": -40.0,
         "format_string": "0.1f"
     },
     "air_temperature": {
@@ -220,7 +220,7 @@
         "description": "Ambient air temperature",
         "scale_factor": 0.1,
         "units": "Degrees C",
-        "offset": "-4.0000000000000000e+01",
+        "offset": -40.0,
         "format_string": "0.0f"
     },
     "fuel_correction_battery": {
@@ -237,7 +237,7 @@
         "description": "Corrects the fuel pulse length based on the voltage of the battery",
         "scale_factor": 0.00133,
         "units": "Milliseconds",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.3f"
     },
     "fuel_correction_engine_temperature": {
@@ -254,7 +254,7 @@
         "description": "Corrects the fuel pulse length based on the engine temperature",
         "scale_factor": 0.1,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "fuel_correction_ambient_temperature": {
@@ -271,7 +271,7 @@
         "description": "Corrects the fuel pulse length based on the ambient air temperature",
         "scale_factor": 0.1,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "fuel_correction_engine_acceleration": {
@@ -288,7 +288,7 @@
         "description": "Corrects the fuel pulse length based on the acceleration of the engine RPM",
         "scale_factor": 0.1,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "fuel_correction_engine_deceleration": {
@@ -305,7 +305,7 @@
         "description": "Corrects the fuel pulse length based on the deceleration of the engine RPM",
         "scale_factor": 0.1,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "fuel_correction_wide_open_throttle": {
@@ -322,7 +322,7 @@
         "description": "Corrects the fuel pulse length when the throttle is fully open",
         "scale_factor": 0.1,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "fuel_correction_idle": {
@@ -339,7 +339,7 @@
         "description": "Corrects the fuel pulse length when the engine is at idle",
         "scale_factor": 0.1,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "CrOL": {
@@ -356,7 +356,7 @@
         "description": "Open Loop Correction",
         "scale_factor": 0.1,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "fuel_correction_learned_rear": {
@@ -373,7 +373,7 @@
         "description": "Corrects the fuel pulse length based on learning from the Oxygen sensor. Applies to the rear cylinder or both cylinders on bikes with only one oxygen sensor.",
         "scale_factor": 0.1,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.1f"
     },
     "estimated_mixture_rear": {
@@ -390,7 +390,7 @@
         "description": "The ECM's best guess at the current fuel/air mixture (percent lean or rich). Applies to the rear cylinder or both cylinders on bikes with only one oxygen sensor. ",
         "scale_factor": 0.1,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.1f"
     },
     "flags": {
@@ -475,7 +475,7 @@
         "description": "Fuel Pressure PWM duty cycle (KFPC_Config enabled)",
         "scale_factor": 1.0,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "vehicle_speed_kph": {
@@ -492,7 +492,7 @@
         "description": "Vehicle speed in KPH (enable in KVS_Config)",
         "scale_factor": 1.0,
         "units": "KPH",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "gear": {
@@ -509,7 +509,7 @@
         "description": "Transmission gear (enable in KVS_Config)",
         "scale_factor": 1.0,
         "units": "",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "manifold_air_pressure_front": {
@@ -526,7 +526,7 @@
         "description": "Air Pressure in the front intake manifold",
         "scale_factor": 1.0,
         "units": "",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "manifold_air_pressure_rear": {
@@ -543,7 +543,7 @@
         "description": "Air Pressure in the rear intake manifold",
         "scale_factor": 1.0,
         "units": "",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "barometric_pressure": {
@@ -560,7 +560,7 @@
         "description": "Barometric pressure in the airbox",
         "scale_factor": 1.0,
         "units": "KPA (typical)",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "fuel_correction_learned_front": {
@@ -577,7 +577,7 @@
         "description": "Corrects the fuel pulse length in the front cylinder based on learning from the oxygen sensor.",
         "scale_factor": 0.1,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.1f"
     },
     "estimated_mixture_front": {
@@ -594,7 +594,7 @@
         "description": "The ECM's best guess at the current fuel/air mixture (percent lean or rich) in the front cylinder.",
         "scale_factor": 0.1,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.1f"
     },
     "historic_trouble_codes": {
@@ -604,10 +604,12 @@
             {
                 "offset": 125,
                 "num_bytes": 1
-            },{
+            },
+            {
                 "offset": 96,
                 "num_bytes": 2
-            },{
+            },
+            {
                 "offset": 68,
                 "num_bytes": 7
             }
@@ -717,7 +719,7 @@
         "description": "MAP, front cylinder (enable in KABP_Config)",
         "scale_factor": 1.0,
         "units": "10-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "manifold_air_pressure_rear_10": {
@@ -734,7 +736,7 @@
         "description": "MAP, rear cylinder  (enable in KABP_Config)",
         "scale_factor": 1.0,
         "units": "10-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "intake_air_control_average": {
@@ -751,7 +753,7 @@
         "description": "IAC_Avg, live (when KIAC_Enable set)",
         "scale_factor": 1.0,
         "units": "Steps",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "barometric_pressure_average": {
@@ -768,7 +770,7 @@
         "description": "Average baro (enable in KABP_Config, KFPC_Config)",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "CR_ABP": {
@@ -785,7 +787,7 @@
         "description": "Airbox, VS CR (enable in KABP_Config, KFPC_Config)",
         "scale_factor": 1.0,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "fuel_correction_barometric_pressure": {
@@ -802,7 +804,7 @@
         "description": "Baro CR (enable in KABP_Config, KFPC_Config)",
         "scale_factor": 1.0,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "oxygen_sensor_reading_front": {
@@ -819,7 +821,7 @@
         "description": "Front Air/Fuel Ratio (0-5V=10-20AFR). Only works when wide-band oxygen sensors are connected.",
         "scale_factor": 0.03922,
         "units": "A/F Ratios",
-        "offset": "1.0000000000000000e+01",
+        "offset": 10.0,
         "format_string": "0.2f"
     },
     "oxygen_sensor_reading_rear": {
@@ -836,7 +838,7 @@
         "description": "Rear Air/Fuel Ratio (0-5V=10-20AFR). Only works when wide-band oxygen sensors are connected.",
         "scale_factor": 0.03922,
         "units": "A/F Ratios",
-        "offset": "1.0000000000000000e+01",
+        "offset": 10.0,
         "format_string": "0.2f"
     },
     "vehicle_speed_mph": {
@@ -853,7 +855,7 @@
         "description": "Vehicle Speed in MPH",
         "scale_factor": 0.62137,
         "units": "MPH",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "TA_F": {
@@ -870,7 +872,7 @@
         "description": "Air Temp in Degrees F",
         "scale_factor": 0.18,
         "units": "Degrees F",
-        "offset": "-4.0000000000000000e+01",
+        "offset": -40.0,
         "format_string": "0.1f"
     },
     "FLoad": {
@@ -887,7 +889,7 @@
         "description": "Front load (enable KTMLoad_Config:7)",
         "scale_factor": 1.0,
         "units": "Percent * 2.56",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "RLoad": {
@@ -904,7 +906,7 @@
         "description": "Rear cylinder load",
         "scale_factor": 1.0,
         "units": "Percent * 2.56",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "Current_TPP": {
@@ -921,7 +923,7 @@
         "description": "Throttle pos. (enable KTMLoad_Config:0)",
         "scale_factor": 1.0,
         "units": "Percent * 2.56",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "MAPF_Load": {
@@ -938,7 +940,7 @@
         "description": "MAP Front scaled (enable  KTMLoad_Config:0)",
         "scale_factor": 1.0,
         "units": "Percent * 2.56",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "MAPR_Load": {
@@ -955,7 +957,7 @@
         "description": "MAP Rear scaled (enable KTMLoad_Config:0)",
         "scale_factor": 1.0,
         "units": "Percent * 2.56",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "Bat_100mV": {
@@ -972,7 +974,7 @@
         "description": "Battery Voltage, 100 mV units",
         "scale_factor": 0.1,
         "units": "100 mVolts",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.1f"
     },
     "AMAPBaro": {
@@ -989,7 +991,7 @@
         "description": "Baro via MAP, 10-bit (KABP_Config:Baro_SData)",
         "scale_factor": 1.0,
         "units": "10-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "ABaro10": {
@@ -1006,7 +1008,7 @@
         "description": "Baro input, 10 bit (KABP_Config:Baro_SData)",
         "scale_factor": 1.0,
         "units": "10-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "throttle_position": {
@@ -1023,7 +1025,7 @@
         "description": "Throttle Position, Degrees",
         "scale_factor": 0.1,
         "units": "Degrees",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.1f"
     },
     "AFP": {
@@ -1040,7 +1042,7 @@
         "description": "Fuel Pump Feedback",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "FP_Setpoint": {
@@ -1057,7 +1059,7 @@
         "description": "Fuel Pressure Setpoint (FPC_Enable and FPC_Live=1)",
         "scale_factor": 1.0,
         "units": "PSI",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.1f"
     },
     "AMAP": {
@@ -1074,7 +1076,7 @@
         "description": "Analog MAP",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "AInj1": {
@@ -1091,7 +1093,7 @@
         "description": "Injector Feedback, Front",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "AInj2": {
@@ -1108,7 +1110,7 @@
         "description": "Injector Feedback, Rear",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "ATPS": {
@@ -1125,7 +1127,7 @@
         "description": "Unscaled Throttle Position",
         "scale_factor": 1.0,
         "units": "10-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "ABat": {
@@ -1142,7 +1144,7 @@
         "description": "Unscaled Battery Reading",
         "scale_factor": 1.0,
         "units": "10-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "ATE": {
@@ -1159,7 +1161,7 @@
         "description": "Unscaled Engine Temp",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "ATA": {
@@ -1176,7 +1178,7 @@
         "description": "Unscaled Air Temp",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "ACF": {
@@ -1193,7 +1195,7 @@
         "description": "Cooling Fan Feedback",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "Fan_Duty": {
@@ -1210,7 +1212,7 @@
         "description": "Cooling Fan Duty Cycle",
         "scale_factor": 1.0,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "VSS_Count": {
@@ -1227,7 +1229,7 @@
         "description": "Vehicle Speed Count",
         "scale_factor": 1.0,
         "units": "Counts/KVS_Sample",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "VS_RPM_Ratio": {
@@ -1244,7 +1246,7 @@
         "description": "Gear Selection Data",
         "scale_factor": 1.0,
         "units": "Counts/KVS_RPM_Revs",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "current_trouble_codes": {
@@ -1254,7 +1256,8 @@
             {
                 "offset": 94,
                 "num_bytes": 2
-            },  {
+            },
+            {
                 "offset": 60,
                 "num_bytes": 6
             }
@@ -1356,7 +1359,7 @@
         "description": "Engine Temp, C*10+40",
         "scale_factor": 1.0,
         "units": "(Raw/10)-40",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "TE_F": {
@@ -1373,7 +1376,7 @@
         "description": "Engine Temp, F",
         "scale_factor": 0.18,
         "units": "Degrees F",
-        "offset": "-4.0000000000000000e+01",
+        "offset": -40.0,
         "format_string": "0.1f"
     },
     "FuelS1": {
@@ -1390,7 +1393,7 @@
         "description": "Showerhead Front pulse width, corrected",
         "scale_factor": 0.001,
         "units": "Milliseconds",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.3f"
     },
     "FuelS2": {
@@ -1407,7 +1410,7 @@
         "description": "Showerhead Rear pulse width, corrected",
         "scale_factor": 0.001,
         "units": "Milliseconds",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.3f"
     },
     "ATE_V": {
@@ -1424,7 +1427,7 @@
         "description": "Engine Temperature input, volts",
         "scale_factor": 0.01953125,
         "units": "Volts",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.2f"
     },
     "ATA_V": {
@@ -1441,7 +1444,7 @@
         "description": "Air Temperature input, volts",
         "scale_factor": 0.01953125,
         "units": "Volts",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.2f"
     },
     "IAC_Pos": {
@@ -1458,7 +1461,7 @@
         "description": "Idle Air Control Stepper Position",
         "scale_factor": 1.0,
         "units": "Steps",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "IAC_Setpoint": {
@@ -1475,7 +1478,7 @@
         "description": "Idle Air Control RPM setpoint",
         "scale_factor": 10.0,
         "units": "RPM",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "AOT": {
@@ -1492,7 +1495,7 @@
         "description": "Analog Oil Temp",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "ACO2": {
@@ -1509,7 +1512,7 @@
         "description": "Analog Catalyst O2",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "ATE1": {
@@ -1526,7 +1529,7 @@
         "description": "Analog Engine Temp 1",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "AKnock1": {
@@ -1543,7 +1546,7 @@
         "description": "Analog Knock 1",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "AKnock2": {
@@ -1560,7 +1563,7 @@
         "description": "Analog Knock 2",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "AO21": {
@@ -1577,7 +1580,7 @@
         "description": "Analog O2 (front)",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "ABaro": {
@@ -1594,7 +1597,7 @@
         "description": "Analog Baro, 8-bit (see ABaro10 for logging)",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "ASpare": {
@@ -1611,7 +1614,7 @@
         "description": "Analog Spare",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "ASWIG": {
@@ -1628,7 +1631,7 @@
         "description": "Analog Switched Ignition",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "DOut2": {
@@ -1725,7 +1728,7 @@
         "description": "Analog Sidestand input (shares Oil Temp input)",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "Fuel_Pressure": {
@@ -1742,7 +1745,7 @@
         "description": "Fuel Pressure (FPC_Enable and FPC_Live=1)",
         "scale_factor": 0.5,
         "units": "PSI",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.1f"
     },
     "CrFP": {
@@ -1759,7 +1762,7 @@
         "description": "Fuel Pressure Correction Factor (KFPC_Config enab)",
         "scale_factor": 1.0,
         "units": "Percent",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "AO2": {
@@ -1776,7 +1779,7 @@
         "description": "Oxygen Sensor",
         "scale_factor": 1.0,
         "units": "10b ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "TP_IAC_Load": {
@@ -1793,7 +1796,7 @@
         "description": "Throttle and IAC load scaled (KTMLoad_Config:0)",
         "scale_factor": 1.0,
         "units": "Percent*2.56",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "AF1": {
@@ -1810,7 +1813,7 @@
         "description": "Air Fuel Sensor, Front",
         "scale_factor": 1.0,
         "units": "10-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "AF2": {
@@ -1827,7 +1830,7 @@
         "description": "Air Fuel Sensor, Rear",
         "scale_factor": 1.0,
         "units": "10-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "BAS": {
@@ -1844,7 +1847,7 @@
         "description": "Bank Angle Sensor",
         "scale_factor": 0.25,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "RC": {
@@ -1861,7 +1864,7 @@
         "description": "Rides since code logged",
         "scale_factor": 1.0,
         "units": "Rides",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "DOut": {
@@ -1918,7 +1921,7 @@
         "description": "Coil Feedback, Front",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     },
     "ACoil2": {
@@ -1935,7 +1938,7 @@
         "description": "Coil Feedback, Rear",
         "scale_factor": 1.0,
         "units": "8-bit ADC",
-        "offset": "0.0000000000000000e+00",
+        "offset": 0.0,
         "format_string": "0.0f"
     }
 }
