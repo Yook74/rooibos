@@ -36,7 +36,7 @@ class Ecm:
         if mock:
             live_data = LIVE_DATA_SAMPLE
         else:
-            self.conn.send(construct_message(b'C'))
+            self.conn.write(construct_message(b'C'))
             live_data = receive_message(self.conn)
 
         out = {}
