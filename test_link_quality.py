@@ -4,7 +4,7 @@ from drivers.exceptions import FailedChecksum
 from drivers.ecm import Ecm
 
 
-def get_checksum_failure_ratio(ecm: Ecm, num_samples=256):
+def get_checksum_failure_ratio(ecm: Ecm, num_samples=10):
     num_failures = 0
     for sample_num in range(num_samples):
         try:
