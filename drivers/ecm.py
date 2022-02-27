@@ -1,4 +1,6 @@
 from typing import Dict
+from multiprocessing import Process, Queue
+from queue import Empty
 
 from serial import Serial
 
@@ -12,45 +14,98 @@ LIVE_DATA_SAMPLE = b'\x18\x0e\x00\x00\x00\x00\x00\x00\x00\x00y*y*\xe4Q\xe4Q&\x00
 
 
 class Ecm:
-    def __init__(self, serial_port: str, live_data_dict: dict):
-        """:param serial_port: passed through to the serial.Serial constructor"""
-        self.conn = None
+    def __init__(self, serial_port: str, live_data_dict: dict, mock=False):
+        """
+        :param serial_port: passed through to the serial.Serial constructor
+        :param live_data_dict: a dictionary containing info about all the available live data like location and format
+        :param mock: If set to true, the ECM's data is not requested and some old data I have lying around is used
+        """
         self.serial_port_str = serial_port
         self.live_data_dict = live_data_dict
+        self.mock = mock
+        self.conn = None
+
+        self.__poll_process = None
+        self.__queue = Queue()
+        self.__cached_live_data = None
 
     def open_conn(self):
-        self.conn = Serial(self.serial_port_str, timeout=0.1)
+        if self.conn:
+            self.conn.close()
+
+        if not self.mock:
+            self.conn = Serial(self.serial_port_str, timeout=0.1)
 
     def close_conn(self):
         if self.conn:
             self.conn.close()
 
-    def get_live_data_params(self, *param_names, mock=False):
-        """
-        Requests the live data from the ECM and returns the values for the given live data parameters.
+    def begin_poll(self):
+        """Sets up a subprocess that makes sure that the latest live data is automatically available"""
+        self.open_conn()
 
-        :param param_names: One or more names for live data parameters. Valid names are given in live_data.json
-        :param mock: If set to true, the ECM's data is not requested and some old data I have lying around is used
-        :return: a dictionary where the keys are the parameter names and the values are their corresponding values
+        def poll():
+            while True:
+                data = self.__fetch_live_data()
+                try:
+                    self.__queue.get_nowait()
+                except Empty:
+                    pass
+
+                self.__queue.put(data)
+
+        self.__poll_process = Process(target=poll)
+        self.__poll_process.start()
+
+    def end_poll(self):
+        """Ends the process set up by begin_poll"""
+        self.close_conn()
+
+        if self.__poll_process:
+            self.__poll_process.terminate()
+            self.__poll_process.join()
+            self.__poll_process = None
+
+    @property
+    def live_data(self) -> dict:
         """
-        if mock:
+        :return: the live data from the ECM as a dictionary where the key is a key from the live data dictionary
+            and the value is the value of that datum.
+
+        This will be much quicker if begin_poll() and end_poll() are used.
+        """
+
+        if self.__poll_process:
+            try:
+                latest_data = self.__queue.get_nowait()
+                self.__cached_live_data = latest_data
+                return latest_data
+            except Empty:
+                if self.__cached_live_data:
+                    return self.__cached_live_data
+
+        return self.__fetch_live_data()
+
+    def __fetch_live_data(self) -> dict:
+        """
+        Requests the live data from the ECM and returns all of the data therein parsed and formatted as a dictionary.
+        """
+        if self.mock:
             live_data = LIVE_DATA_SAMPLE
         else:
             self.conn.write(construct_message(b'C'))
             live_data = receive_message(self.conn)
 
         out = {}
-        for param_name in param_names:
-            param_info = self.live_data_dict[param_name]
-
+        for param_name, param_info in self.live_data_dict.items():
             if param_info['type'] == 'scalar':
-                out[param_name] = self.parse_scalar(live_data, param_name)
+                out[param_name] = self.__parse_scalar(live_data, param_name)
             else:
-                out[param_name] = self.parse_bitfield(live_data, param_name)
+                out[param_name] = self.__parse_bitfield(live_data, param_name)
 
         return out
 
-    def parse_scalar(self, live_data: bytes, name: str) -> float:
+    def __parse_scalar(self, live_data: bytes, name: str) -> float:
         """
         Pulls the given scalar parameter out of the live data buffer and returns it as a float
 
@@ -58,7 +113,7 @@ class Ecm:
         :param name: the name of the scalar parameter
         :return: the parameter's value as a float
         """
-        param_data = self.get_parameter_data(live_data, name)
+        param_data = self.__get_parameter_data(live_data, name)
         param_info = self.live_data_dict[name]
 
         if param_info['type'] != 'scalar':
@@ -70,7 +125,7 @@ class Ecm:
 
         return float(value)
 
-    def parse_bitfield(self, live_data: bytes, name: str) -> Dict[str, bool]:
+    def __parse_bitfield(self, live_data: bytes, name: str) -> Dict[str, bool]:
         """
         Pulls the values of the given bitfield out of the live data buffer
 
@@ -78,7 +133,7 @@ class Ecm:
         :param name: the name of the bitfield
         :return: a dictionary where the key is the name of the bit and the value is the bit converted to a bool
         """
-        param_data = self.get_parameter_data(live_data, name)
+        param_data = self.__get_parameter_data(live_data, name)
         param_info = self.live_data_dict[name]
 
         if param_info['type'] != 'bitfield':
@@ -93,7 +148,7 @@ class Ecm:
 
         return out
 
-    def get_parameter_data(self, live_data: bytes, parameter_name: str) -> bytes:
+    def __get_parameter_data(self, live_data: bytes, parameter_name: str) -> bytes:
         """
         Iterates over the addresses of the given parameter and puts together all the data for that parameter
 

@@ -19,14 +19,12 @@ def display_live_data(stdscr):
     stdscr.clear()
 
     while True:
-        param_dict = ecm.get_live_data_params(*PARAMETERS.keys())
-
-        for idx, param_name, in enumerate(param_dict):
+        for idx, param_name in enumerate(PARAMETERS):
             display_name = PARAMETERS[param_name]
             format_str = '{:' + live_data_dict[param_name]['format_string'] + '}'
             units = live_data_dict[param_name]['units']
 
-            param_value = param_dict[param_name]
+            param_value = ecm.live_data[param_name]
             param_value = format_str.format(param_value)
 
             stdscr.addstr(idx, 0, f'{display_name}: {param_value} {units}', curses.color_pair(1))
@@ -39,9 +37,10 @@ if __name__ == '__main__':
     with open('drivers/live_data.json') as json_file:
         live_data_dict = json.load(json_file)
 
-    ecm = Ecm('/dev/ttyUSB0', live_data_dict)
-    ecm.open_conn()
+    ecm = Ecm('/dev/ttyUSB0', live_data_dict, mock=True)
+    ecm.begin_poll()
 
-    curses.wrapper(display_live_data)
-
-    ecm.close_conn()
+    try:
+        curses.wrapper(display_live_data)
+    finally:
+        ecm.end_poll()
