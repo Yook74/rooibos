@@ -9,7 +9,7 @@ class Clock(Element):
     """A digital clock"""
 
     def __init__(self, display: GttDisplay):
-        self.display: GttDisplay = display
+        super().__init__(display)
 
         self.display.create_label(
             'clock', x_pos=0, y_pos=45, width=80, height=35, font_size=14, font_id='sans',

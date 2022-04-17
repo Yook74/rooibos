@@ -11,7 +11,8 @@ class RpmBar(Element):
     """A bar across the top of the screen that serves as a tachometer"""
 
     def __init__(self, display: GttDisplay):
-        self.display : GttDisplay = display
+        super().__init__(display)
+
         self.total_height = 40
         self.bar_height = self.total_height // 2
         self.color = 'FFFFFF'
