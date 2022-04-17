@@ -4,6 +4,8 @@ from gtt import GttDisplay
 
 from display.element import Element
 
+MAX_RPM = 7600
+
 
 class RpmBar(Element):
     """A bar across the top of the screen that serves as a tachometer"""
@@ -17,18 +19,18 @@ class RpmBar(Element):
 
         self._redraw_bar()
 
-        spaces = ' ' * 8
-        self.display.create_label(
-            label_id='rpm_label',
-            x_pos=0, y_pos=self.bar_height, width=self.display.width, height=self.total_height - self.bar_height,
-            font_size=4,
-            value=f'{spaces}1{spaces}2{spaces}3{spaces}4{spaces}5{spaces}6{spaces}7'
-        )
+        label_width = 15
+        for label_int in range(1, 8):
+            x_pos = round((self.display.width / MAX_RPM) * label_int * 1000) - label_width // 2
+            self.display.create_label(
+                label_id=f'rpm_label_{label_int}',
+                x_pos=x_pos, y_pos=self.bar_height, width=label_width, height=self.total_height - self.bar_height,
+                font_size=10, font_id='sans',
+                value=str(label_int)
+            )
 
     def _redraw_bar(self):
         """Redraws the bar over top of the old bar in order to change the color"""
-        min_value = 0
-        max_value = 7600
         bg_color = '000000'
         x_pos = 0
         y_pos = 0
@@ -36,7 +38,7 @@ class RpmBar(Element):
         self.display._conn.write(
             bytes.fromhex('FE 67') +
             self.id.to_bytes(1, 'big') +
-            ints_to_signed_shorts(min_value, max_value, x_pos, y_pos, self.display.width, self.bar_height) +
+            ints_to_signed_shorts(0, MAX_RPM, x_pos, y_pos, self.display.width, self.bar_height) +
             hex_colors_to_bytes(self.color, bg_color) +
             BarDirection.LEFT_TO_RIGHT.to_bytes(1, 'big')
         )
