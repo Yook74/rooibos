@@ -4,7 +4,7 @@ from gtt import GttDisplay
 from gtt.byte_formatting import ints_to_signed_shorts, hex_colors_to_bytes
 from gtt.enums import BarDirection
 
-from display import rpm_bar, clock
+from display import rpm_bar, clock, tank_bar
 
 
 class RooibosDisplay(GttDisplay):
@@ -15,6 +15,7 @@ class RooibosDisplay(GttDisplay):
 
         self.rpm_bar = rpm_bar.RpmBar(self)
         self.clock = clock.Clock(self)
+        self.tank_bar = tank_bar.TankBar(self)
 
     def overwrite_bar(self, bar_id: int, max_value: int,
                          x_pos: int, y_pos: int, width: int, height: int,
