@@ -1,6 +1,8 @@
 import time
 
 from gtt import GttDisplay
+from gtt.byte_formatting import ints_to_signed_shorts, hex_colors_to_bytes
+from gtt.enums import BarDirection
 
 from display import rpm_bar, clock
 
@@ -14,6 +16,19 @@ class RooibosDisplay(GttDisplay):
         self.rpm_bar = rpm_bar.RpmBar(self)
         self.clock = clock.Clock(self)
 
+    def overwrite_bar(self, bar_id: int, max_value: int,
+                         x_pos: int, y_pos: int, width: int, height: int,
+                         min_value: int = 0, fg_color_hex='FFFFFF', bg_color_hex='000000',
+                         direction: BarDirection = BarDirection.BOTTOM_TO_TOP):
+        """Acts like create_plain_bar but all the ID reuse protection is turned off"""
+        self._conn.write(
+            bytes.fromhex('FE 67') +
+            bar_id.to_bytes(1, 'big') +
+            ints_to_signed_shorts(min_value, max_value, x_pos, y_pos, width, height) +
+            hex_colors_to_bytes(fg_color_hex, bg_color_hex) +
+            direction.to_bytes(1, 'big')
+        )
+
 
 if __name__ == '__main__':
     d = RooibosDisplay('/dev/ttyUSB0')
@@ -22,3 +37,8 @@ if __name__ == '__main__':
     for rpm in rpms:
         d.rpm_bar.update(rpm)
         time.sleep(0.05)
+
+    for odo in range(0, 200, 3):
+        d.tank_bar.update(odo)
+        time.sleep(0.05)
+

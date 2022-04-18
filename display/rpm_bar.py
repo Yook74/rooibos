@@ -32,16 +32,11 @@ class RpmBar(Element):
 
     def _redraw_bar(self):
         """Redraws the bar over top of the old bar in order to change the color"""
-        bg_color = '000000'
-        x_pos = 0
-        y_pos = 0
-
-        self.display._conn.write(
-            bytes.fromhex('FE 67') +
-            self.id.to_bytes(1, 'big') +
-            ints_to_signed_shorts(0, MAX_RPM, x_pos, y_pos, self.display.width, self.bar_height) +
-            hex_colors_to_bytes(self.color, bg_color) +
-            BarDirection.LEFT_TO_RIGHT.to_bytes(1, 'big')
+        self.display.overwrite_bar(
+            self.id, MAX_RPM,
+            x_pos=0, y_pos=0, width=self.display.width, height=self.bar_height,
+            fg_color_hex=self.color,
+            direction=BarDirection.LEFT_TO_RIGHT
         )
 
     def update(self, rpm: int):
