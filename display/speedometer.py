@@ -12,7 +12,7 @@ class Speedometer(Element):
 
         self.display.create_label(
             'speedo', value='0',
-            x_pos=200, y_pos=55, width=180, height=120,
+            x_pos=150, y_pos=55, width=180, height=120,
             font_size=60, font_id='sans', horizontal_just=FontAlignHorizontal.RIGHT
         )
 

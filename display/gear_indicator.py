@@ -11,13 +11,13 @@ class GearIndicator(Element):
 
         self.display.create_label(
             'gear_label', value='Gear',
-            x_pos=120, y_pos=60, width=40, height=30,
+            x_pos=85, y_pos=60, width=40, height=30,
             font_size=10, font_id='sans'
         )
 
         self.display.create_label(
             'gear', value='0',
-            x_pos=106, y_pos=80, width=60, height=80,
+            x_pos=76, y_pos=80, width=60, height=80,
             font_size=40, font_id='sans'
         )
 
