@@ -30,6 +30,8 @@ class TankBar(Element):
         with open(FILE_PATH) as odo_file:
             self.last_refill_odo = float(odo_file.read().strip())
 
+        self.update(self.last_refill_odo, low_fuel_warning=True)
+
     def _redraw_bar(self):
         self.display.overwrite_bar(
             self.id, max_value=TANK_GALLONS * 10,
