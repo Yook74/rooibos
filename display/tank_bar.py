@@ -43,6 +43,8 @@ class TankBar(Element):
         """:param odometer_reading: the current odometer reading
         :param low_fuel_warning: if set to True, the fuel estimation will be skipped and the bar will be red and empty
         """
+
+        # TODO show remaining miles instead of a red bar when at the warning level
         tank_gallons = TANK_GALLONS - (odometer_reading - self.last_refill_odo) / AVERAGE_MPG
 
         if tank_gallons < 1.2 or low_fuel_warning:
