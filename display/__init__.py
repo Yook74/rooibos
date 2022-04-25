@@ -4,7 +4,7 @@ from gtt import GttDisplay
 from gtt.byte_formatting import ints_to_signed_shorts, hex_colors_to_bytes
 from gtt.enums import BarDirection
 
-from display import rpm_bar, clock, tank_bar, speedometer, gear_indicator
+from display import rpm_bar, clock, tank_bar, speedometer, gear_indicator, lights
 
 
 class RooibosDisplay(GttDisplay):
@@ -18,6 +18,7 @@ class RooibosDisplay(GttDisplay):
         self.tank_bar = tank_bar.TankBar(self)
         self.speedometer = speedometer.Speedometer(self)
         self.gear_indicator = gear_indicator.GearIndicator(self)
+        self.turn_indicators = lights.TurnIndicator(self)
 
     def overwrite_bar(self, bar_id: int, max_value: int,
                          x_pos: int, y_pos: int, width: int, height: int,
@@ -35,6 +36,7 @@ class RooibosDisplay(GttDisplay):
 
 if __name__ == '__main__':
     d = RooibosDisplay('/dev/ttyUSB0')
+    # d.enter_mass_storage_mode()
     rpms = list(range(300, 1000, 50)) + list(range(1000, 7300, 300)) + list(range(7300, 2500, -750))
 
     for speed in [8, 60, 120]:
@@ -47,5 +49,9 @@ if __name__ == '__main__':
 
     for odo in range(0, 200, 3):
         d.tank_bar.update(odo)
+        time.sleep(0.05)
+
+    for kwargs in [dict(left_turn=True)] * 30 + [dict()] * 20 + [dict(right_turn=True)] * 30 + [{}]:
+        d.turn_indicators.update(**kwargs)
         time.sleep(0.05)
 
