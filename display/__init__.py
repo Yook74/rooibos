@@ -19,6 +19,7 @@ class RooibosDisplay(GttDisplay):
         self.speedometer = speedometer.Speedometer(self)
         self.gear_indicator = gear_indicator.GearIndicator(self)
         self.turn_indicators = lights.TurnIndicator(self)
+        self.high_beam = lights.HighBeam(self)
 
     def overwrite_bar(self, bar_id: int, max_value: int,
                          x_pos: int, y_pos: int, width: int, height: int,
@@ -55,3 +56,6 @@ if __name__ == '__main__':
         d.turn_indicators.update(**kwargs)
         time.sleep(0.05)
 
+    d.high_beam.update(True)
+    time.sleep(2)
+    d.high_beam.update(False)

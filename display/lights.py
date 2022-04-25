@@ -12,7 +12,7 @@ class TurnIndicator(Element):
         super().__init__(display)
 
         self.x_pos = 330
-        self.y_pos = 100
+        self.y_pos = 80
         self.width = 65
         self.height = 41
         self.blink_duration = 0.5  # length in seconds of half of a blink cycle
@@ -33,6 +33,10 @@ class TurnIndicator(Element):
         self.display.display_bitmap(f'{left_right}_turn', self.x_pos, self.y_pos)
 
     def update(self, right_turn=False, left_turn=False):
+        """Can be used to display the left or right turn signals which will blink.
+        Even if you're not changing the state of the arrows, you should call this method
+        because otherwise the blinking will not work.
+        """
         if right_turn:
             new_state = 'right'
         elif left_turn:
@@ -62,5 +66,30 @@ class TurnIndicator(Element):
             self.blink_schedule = time.time() + self.blink_duration
 
         self.last_state = new_state
+
+
+class HighBeam(Element):
+    """A high beam indicator light"""
+
+    def __init__(self, display: GttDisplay):
+        super().__init__(display)
+
+        display.load_bitmap('high_beam', 'rooibos_assets/high_beam.bmp')
+        display.set_bitmap_transparency('high_beam', 'FFFFFF')
+
+        self.x_pos = 400
+        self.y_pos = 80
+        self.width = 70
+        self.height = 45
+
+    def update(self, show: bool):
+        if show:
+            self.display.display_bitmap(f'high_beam', self.x_pos, self.y_pos)
+        else:
+            self.display.set_drawing_color('000000')
+            self.display.draw_rectangle(self.x_pos, self.y_pos, self.width, self.height, fill=True)
+
+
+
 
 
