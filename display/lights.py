@@ -90,6 +90,21 @@ class HighBeam(Element):
             self.display.draw_rectangle(self.x_pos, self.y_pos, self.width, self.height, fill=True)
 
 
+class NeutralLight(Element):
+    """A green N"""
 
+    def __init__(self, display: GttDisplay):
+        super().__init__(display)
 
+        self.display.create_label(
+            'neutral',
+            x_pos=335, y_pos=120, width=65, height=70,
+            font_size=32, font_id='sans', fg_color_hex='00FF00',
+            value=''
+        )
 
+    def update(self, show: bool):
+        if show:
+            self.display.update_label('neutral', 'N')
+        else:
+            self.display.update_label('neutral', '')

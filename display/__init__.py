@@ -20,6 +20,7 @@ class RooibosDisplay(GttDisplay):
         self.gear_indicator = gear_indicator.GearIndicator(self)
         self.turn_indicators = lights.TurnIndicator(self)
         self.high_beam = lights.HighBeam(self)
+        self.neutral_light = lights.NeutralLight(self)
 
     def overwrite_bar(self, bar_id: int, max_value: int,
                          x_pos: int, y_pos: int, width: int, height: int,
@@ -40,6 +41,7 @@ if __name__ == '__main__':
     # d.enter_mass_storage_mode()
     rpms = list(range(300, 1000, 50)) + list(range(1000, 7300, 300)) + list(range(7300, 2500, -750))
 
+
     for speed in [8, 60, 120]:
         d.speedometer.update(speed)
         time.sleep(0.5)
@@ -56,6 +58,8 @@ if __name__ == '__main__':
         d.turn_indicators.update(**kwargs)
         time.sleep(0.05)
 
+    d.neutral_light.update(True)
     d.high_beam.update(True)
     time.sleep(2)
     d.high_beam.update(False)
+    d.neutral_light.update(False)
